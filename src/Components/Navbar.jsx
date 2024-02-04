@@ -5,6 +5,7 @@ import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import logo from "../Assets/logoName.svg";
+import { Link } from "react-router-dom";
 
 function Navbar() {
     const [activeIcon, setActiveIcon] = useState('home'); // Initial active icon is 'home'
@@ -16,9 +17,12 @@ function Navbar() {
     return (
       <div className='navbar'>
         <div className="logo-wrapper">
+          <Link to="/">
           <img src={logo} className='logo' alt='logo'/>
+          </Link>
         </div>
         <div className="navlink-wrapper">
+        <Link to="/">
           <div className="icon-wrapper" onClick={() => handleIconClick('home')}>
             <HomeRoundedIcon
               className={`icon ${activeIcon === 'home' ? 'active' : ''}`}
@@ -26,6 +30,7 @@ function Navbar() {
             />
             {activeIcon === 'home' && <span className='active-dot'>.</span>}
           </div>
+          </Link>
           <div className="icon-wrapper" onClick={() => handleIconClick('notifications')}>
             <NotificationsIcon
               className={`icon ${activeIcon === 'notifications' ? 'active' : ''}`}
@@ -52,43 +57,5 @@ function Navbar() {
     );
   }
   
-
-// function Navbar() {
-
-//     const [activeIcon, setActiveIcon] = useState('home'); // Initial active icon is 'home'
-
-//     const handleIconClick = (iconName) => {
-//       setActiveIcon(iconName);
-//     };
-  
-//     const getOpacity = (iconName) => (activeIcon === iconName ? '#F05A22' : "#F9DDCF");
-  
-
-//     return (
-//         <div className='navbar'>
-//           <div className="logo-wrapper">
-//             <img src={logo} className='logo' alt='logo'/>
-//           </div>
-//           <div className="navlink-wrapper">
-//             <div className="icon-wrapper" onClick={() => handleIconClick('home')}>
-//               <HomeRoundedIcon className='icon' style={{ color: getOpacity('home') }} />
-//               <span className='active-dot'>.</span>
-//             </div>
-//             <div className="icon-wrapper" onClick={() => handleIconClick('notifications')}>
-//               <NotificationsIcon className='icon' style={{ color: getOpacity('notifications') }} />
-//               <span className='active-dot'>.</span>
-//             </div>
-//             <div className="icon-wrapper" onClick={() => handleIconClick('turnedIn')}>
-//               <TurnedInIcon className='icon' style={{ color: getOpacity('turnedIn') }} />
-//               <span className='active-dot'>.</span>
-//             </div>
-//             <div className="icon-wrapper" onClick={() => handleIconClick('person')}>
-//               <PersonIcon className='icon' style={{ color: getOpacity('person') }} />
-//               <span className='active-dot'>.</span>
-//             </div>
-//           </div>
-//         </div>
-//       );
-// }
 
 export default Navbar;

@@ -6,11 +6,11 @@ import { FaAngleRight } from "react-icons/fa6";
 
 import { postRequest } from "../Redux/Actions/action";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-function Homepage() {
+function Homepage({setSelectedItem}) {
   const { loading, data, error } = useSelector((state) => state);
   console.log(loading, data, error);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -41,9 +41,11 @@ function Homepage() {
                       {post.body}, <span>Read more...</span>
                     </p>
                   </div>
-                  <button type="button">
+                  <Link to={`/item/:${post.id}`}>
+                    <button type="button" onclick={setSelectedItem(post)}>
                     <FaAngleRight />
                   </button>
+                  </Link>
                 </div>
               </div>
             ))}

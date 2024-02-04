@@ -1,8 +1,14 @@
 import React from 'react'
+import Navbar from './Navbar'
 
-function Item() {
+function Item(setSelectedItem) {
   return (
-    <div>Item</div>
+    <div>
+        <Navbar/>
+        <h1>
+            Hello
+        </h1>
+    </div>
   )
 }
 
