@@ -4,7 +4,7 @@ import Homepage from './Components/Homepage';
 import Item from './Components/Item';
 
 const App = () => {
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState({});
   return (
     <div>
       <Routes>
