@@ -30,18 +30,25 @@
     align-items: center;
 }
 .icon-wrapper{
-    font-size: 30px;
     position: relative;
 }
-.icon{
+.navlink-wrapper a{
     color: #F9DDCF;
-    cursor: pointer;
-    /* box-shadow: 3px 5px 12px 0px #FFBE9DC7; */
+}
+.navlink-wrapper .active{
+    color: #F05A22;
+}
+.icon-wrapper:hover{
+    color: var(--orange);
+}
+.navlink-wrapper .active .active-dot{
+    display: block;
 }
 .active-dot{
+    display: none;
     position: absolute;
     bottom: -8px;
-    left: 35%;
+    left: 42%;
     color: var(--orange);
     font-weight: 900;
 }
@@ -55,4 +62,11 @@
         position: static;
     }
 }
-
+@media screen and (max-width:426px) {
+    .navlink-wrapper{
+        position: fixed;
+        bottom: 0;
+        width: 100vw;
+        border-radius: unset;
+    }
+}

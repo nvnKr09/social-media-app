@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "./Navbar";
 import "../Styles/Homepage.css";
 import { CiSearch } from "react-icons/ci";
 
@@ -9,7 +8,6 @@ function Homepage({setSelectedItem}) {
 
   return (
     <div>
-      <Navbar />
       <div className="main">
         <h1>Social Media For Travellers</h1>
         <div className="search">
