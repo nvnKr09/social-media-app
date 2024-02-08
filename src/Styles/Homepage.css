@@ -27,16 +27,16 @@
 }
 .card-container {
   padding: 1.5rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* justify-content: center; */
   gap: 2rem;
 }
 .card {
   padding: 1rem;
   background: #fff;
-  aspect-ratio: 1;
-  width: 400px;
+  /* aspect-ratio: 1;
+  width: 400px; */
   height: fit-content;
   border-radius: 26px;
   display: flex;
@@ -97,9 +97,6 @@
   cursor: pointer;
 }
 @media screen and (max-width: 769px) {
-  .card {
-    width: 300px;
-  }
   .detail-btn button{
     scale: 0.8;
     /* flex-direction: column; */
